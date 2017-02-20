@@ -140,10 +140,13 @@ var Lightbox = React.createClass({
         style={this.props.style}
         onLayout={() => {}}
       >
-        <Animated.View style={{opacity: this.state.layoutOpacity}}>
+        <Animated.View
+          style={[this.props.style, { opacity: this.state.layoutOpacity }]}
+          >
           <TouchableHighlight
             underlayColor={this.props.underlayColor}
             onPress={this.open}
+            style={this.props.style}
           >
             {this.props.children}
           </TouchableHighlight>
